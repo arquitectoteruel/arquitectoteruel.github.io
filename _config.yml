@@ -1,0 +1,21 @@
+# Site settings
+title: Beatriz Tabuenca - Arquitecta
+email: arquitectoteruel@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Arquitecta en Albarracín, Teruel y Zaragoza
+url: "arquitectoteruel.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+gems:
+    - jekyll-paginate
+    - jekyll-redirect-from
+    - jekyll-sitemap
+    - jekyll-feed
+
+paginate: 3
+paginate_path: "blog/page:num"
+sass:
+  sass_dir: assets/sass
+  style: compressed

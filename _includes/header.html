@@ -1,0 +1,33 @@
+<header class="main-navigation">
+  <div class="container-fluid">
+    <div class="col-xs-4">
+      <a href="{{site.url}}" class="logo">
+        <img src="/assets/images/logo/logo-white.png" alt="Logo" class="img-circle"/>
+      </a>
+    </div>
+    <div class="col-xs-8 text-right">
+      <a href="#!" id="nav-toggle" class="menu-right toggle-menu"><span></span></a><a href="#!" class="search"></a>
+    </div>
+  </div>
+  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+    <a href="{{site.url}}" class="logo">
+      <img src="/assets/images/logo/logo-white.png" alt="Logo" class="img-circle"/></a>
+    <div id="cssmenu">
+      <ul>
+        {% for item in site.data.nav %}
+          {% if item.childern %}
+            <li><a href="#!" class="has-sub">{{item.name}}</a>
+            <ul>
+            {% for children in item.children %}
+              <li><a href="{{item.path}}" class="transition link">{{item.name}}</a></li>
+            {% endfor %}
+            </ul>
+          {% else %}
+          <li><a href="{{item.path}}" class="transition link">{{item.name}}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <span> Copyrights &copy; {{site.time | date: '%Y'}} &middot; Crafted with <i class="icon-heart"></i> by Nacho García</span>
+    </div>
+  </nav>
+</header>
