@@ -1,6 +1,6 @@
 /* ========================================================================
 
-BACC: slider-initialization.js
+ARCHITEKT: slider-initialization.js
 
 Revolution Slider Initialization File.
 
@@ -14,8 +14,6 @@ files on all pages, for the sake of speed.
  
 =========================================================================
  */
-
-'use strict';
 
 jQuery(document).ready(function( $ ) {
 
