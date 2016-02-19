@@ -1,0 +1,26 @@
+<div id="home-slider">
+  <div class="rev_slider_wrapper header-introduction text-center">
+    <div id="rev_slider_1" data-version="5.0" class="rev_slider">
+      <ul>
+        {% for slide in include.slides %}
+        <li data-transition="slideoverleft"><img src="{{slide.image}}" alt="{{slide.title}}" width="1920" height="1000"/>
+          <div class="section-overlay"></div>
+          <div data-x="left" data-y="center" data-hoffset="0" data-transform_in="x:-50;opacity:0s:00;s:400;e:Power2.easeInOut;" data-transform_out="x:-50;opacity:0s:400;s:400;e:Power2.easeInOut;" data-start="800" class="tp-caption padding-left">
+            <div class="text-block header alternative text-left">
+              <div class="slider-line"></div>
+              <h1>{{slide.title}}</h1>
+            </div>
+          </div>
+          <div data-x="right" data-y="center" data-hoffset="300" data-transform_in="x:-50;opacity:0s:00;s:400;e:Power2.easeInOut;" data-transform_out="x:-50;opacity:0s:400;s:400;e:Power2.easeInOut;" data-start="800" class="tp-caption">
+            <div class="text-block alternative line-hidden">
+              <div class="slider-line"></div>
+              <div class="line-thick"></div>
+            </div>
+          </div>
+          <div data-x="right" data-y="bottom" data-hoffset="265" data-voffset="15" data-transform_in="x:50;opacity:0s:00;s:400;e:Power2.easeInOut;" data-transform_out="x:50;opacity:0s:400;s:400;e:Power2.easeInOut;" data-start="800" class="tp-caption"><a href="{{slide.button.path}}" class="btn btn-link btn-link-white">{{slide.button.title}}</a></div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
