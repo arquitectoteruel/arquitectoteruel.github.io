@@ -111,35 +111,20 @@ slides:
             </div>
           </div>
           <div class="col-md-4 margin-top">
+            {% for post in site.posts limit:3 %}
             <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">MARKETING</a> &middot; <a href="#!">22 JANUARY</a></span></div><a href="blog-single.html"><img src="assets/images/blog-1.jpg" alt="Blog post image"/></a>
+              <div class="blog-post-info">
+                <span><time datetime={{post.date | date: '%Y-%m-%d'}}>{{post.date | date: '%d-%m-%Y'}}</time></span>
+              </div>
+              <a href="{{post.url}}"><img src="/assets/images/posts/{{post.images.first}}" alt="{{post.title}}"/></a>
               <div class="blog-post-details">
-                <h3><a href="blog-single.html">MAKE IT BEATIFUL</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
+                <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                <p class="text-justify">{{post.excerpt}}</p><a href="{{post.url}}" class="btn btn-link">Leer más</a>
               </div>
               <hr/>
             </article>
           </div>
-          <div class="col-md-4 margin-top">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">AWARDS</a> &middot; <a href="#!">25 JANUARY</a></span></div><a href="blog-single.html"><img src="assets/images/blog-2.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">THE PERFECT STRATEGY</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
-          <div class="col-md-4 margin-top">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">ARCHITECTURE DESIGN</a> &middot; <a href="#!">26 JANUARY</a></span></div><a href="blog-single.html"><img src="assets/images/blog-3.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">COMES CREATION</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
