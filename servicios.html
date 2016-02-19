@@ -1,5 +1,9 @@
 ---
 layout: default
+services:
+  - name: Diseño de casas
+    icon: house
+    description: Hago casas
 ---
 {% include section-header.html title="SERVICIOS" image="/assets/images/header-3.jpg" %}
 <section id="section-to-scroll" class="section section-semi-white">
@@ -9,7 +13,7 @@ layout: default
         <div class="row">
           <div class="col-md-12">
             <div class="section-head"><span>.01</span>
-              <h3>SPECIALITIES</h3>
+        <h3>SERVICIOS</h3>
             </div>
           </div>
           <div class="col-md-12 padded">
@@ -18,42 +22,14 @@ layout: default
               <p class="no-margin"> Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have:</p>
             </div>
           </div>
+          {% for service in page.services %}
           <div class="col-md-4">
-            <div class="icon-block"><i class="icon-lecturer"></i>
-              <h4>INTERIOR DESIGN</h4>
-              <p class="text-justify">We us fifth sea have face which male fifth said seas rule above for, divide under was beast won't fruitful had grass grass under.</p>
+            <div class="icon-block"><i class="icon-{{service.icon}}"></i>
+              <h4>{{service.name}}</h4>
+              <p class="text-justify">{{service.description}}</p>
             </div>
           </div>
-          <div class="col-md-4 small-screen-margin-top">
-            <div class="icon-block"><i class="icon-house"></i>
-              <h4>EXTERIOR DESIGN</h4>
-              <p class="text-justify">We us fifth sea have face which male fifth said seas rule above for, divide under was beast won't fruitful had grass grass under.</p>
-            </div>
-          </div>
-          <div class="col-md-4 small-screen-margin-top">
-            <div class="icon-block"><i class="icon-bag"></i>
-              <h4>BUSSINESS PLAN</h4>
-              <p class="text-justify">We us fifth sea have face which male fifth said seas rule above for, divide under was beast won't fruitful had grass grass under.</p>
-            </div>
-          </div>
-          <div class="col-md-4 margin-top">
-            <div class="icon-block"><i class="icon-badge"></i>
-              <h4>AWARDED AGENCY</h4>
-              <p class="text-justify">We us fifth sea have face which male fifth said seas rule above for, divide under was beast won't fruitful had grass grass under.</p>
-            </div>
-          </div>
-          <div class="col-md-4 margin-top">
-            <div class="icon-block"><i class="icon-heart"></i>
-              <h4>LOVELY PEOPLE</h4>
-              <p class="text-justify">We us fifth sea have face which male fifth said seas rule above for, divide under was beast won't fruitful had grass grass under.</p>
-            </div>
-          </div>
-          <div class="col-md-4 margin-top">
-            <div class="icon-block"><i class="icon-eye"></i>
-              <h4>MODERN SKILLS</h4>
-              <p class="text-justify">We us fifth sea have face which male fifth said seas rule above for, divide under was beast won't fruitful had grass grass under.</p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
