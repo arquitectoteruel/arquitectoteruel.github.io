@@ -14,7 +14,7 @@ gems:
     - jekyll-sitemap
     - jekyll-feed
 
-paginate: 3
+paginate: 6
 paginate_path: "blog/page:num"
 sass:
   sass_dir: assets/sass

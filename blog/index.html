@@ -12,70 +12,36 @@ layout: default
               <h3>BLOG</h3>
             </div>
           </div>
+          {% for post in paginator.posts %}
           <div class="col-md-4">
             <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">APARTMENTS</a> &middot; <a href="#!">12 JANUARY</a></span></div><a href="blog-single.html"><img src="/assets/images/blog-1.jpg" alt="Blog post image"/></a>
+              <div class="blog-post-info">
+                <span><time datetime={{post.date | date: '%Y-%m-%d'}}>{{post.date | date: '%d-%m-%Y'}}</time></span>
+              </div>
+              <a href="{{post.url}}"><img src="/assets/images/posts/{{post.images.first}}" alt="{{post.title}}"/></a>
               <div class="blog-post-details">
-                <h3><a href="blog-single.html">TURN PAPER TO A HOUSE</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
+                <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                <p class="text-justify">{{post.excerpt}}</p><a href="{{post.url}}" class="btn btn-link">Leer más</a>
               </div>
               <hr/>
             </article>
           </div>
-          <div class="col-md-4">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">EXTERIOR DESIGN</a> &middot; <a href="#!">14 JANUARY</a></span></div><a href="blog-single.html"><img src="/assets/images/blog-2.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">IT'S ALL ABOUT THIS</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">HOTEL DESIGN</a> &middot; <a href="#!">19 JANUARY</a></span></div><a href="blog-single.html"><img src="/assets/images/blog-3.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">5 TIPS FOR EVERYONE</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
-          <div class="col-md-4 margin-top">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">MARKETING</a> &middot; <a href="#!">22 JANUARY</a></span></div><a href="blog-single.html"><img src="/assets/images/blog-4.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">MAKE IT BEATIFUL</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
-          <div class="col-md-4 margin-top">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">AWARDS</a> &middot; <a href="#!">25 JANUARY</a></span></div><a href="blog-single.html"><img src="/assets/images/blog-5.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">THE PERFECT STRATEGY</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
-          <div class="col-md-4 margin-top">
-            <article class="blog-post">
-              <div class="blog-post-info"><span><a href="#!">ARCHITECTURE DESIGN</a> &middot; <a href="#!">26 JANUARY</a></span></div><a href="blog-single.html"><img src="/assets/images/blog-6.jpg" alt="Blog post image"/></a>
-              <div class="blog-post-details">
-                <h3><a href="blog-single.html">COMES CREATION</a></h3>
-                <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.</p><a href="blog-single.html" class="btn btn-link">READ MORE</a>
-              </div>
-              <hr/>
-            </article>
-          </div>
+          {% endfor %}
           <div class="col-md-12">
             <ul class="pagination">
-              <li><a href="#!">1</a></li>
-              <li><a href="#!">2</a></li>
+              {% if paginator.previous_page %}}
+                {% if paginator.previous_page == 1 %}
+                  <li><a href="/blog/">1</a></li>
+                {% else %}
+                  <li><a href="{{paginator.previous_page}}">{{paginator.previous_page}}</a></li>
+                {% endif %}
+              {% endif %}
+              {% if paginator.page == 1 %}
+                  <li><a href="/blog/">1</a></li>
+                {% else %}
+                  <li><a href="{{paginator.page}}">{{paginator.page}}</a></li>
+                {% endif %}
+              {% if paginator.next_page %}}<li><a href="{{paginator.next_page}}">{{paginator.next_page}}</a></li>{% endif %}
             </ul>
           </div>
         </div>
