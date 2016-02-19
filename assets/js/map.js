@@ -1,12 +1,12 @@
 window.map = {
-    mapType: 'ROADMAP',
-    mapZoom: 10,
+    mapType: 'TERRAIN',
+    mapZoom: 9,
     mapStyle: 'ARCHITEKT-default',
-    mapScroll: 'on',
+    mapScroll: 'off',
     marker: 'show',
    //label: '',
-    lat: '40.740957',
-    lng: '-74.002119',
+    lat: '40.4064653',
+    lng: '-1.4444392',
     markerURL: 'assets/images/marker.png'
 };
 
