@@ -1,160 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Architekt</title>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="apple-touch-fullscreen" content="yes"/><link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/androidassets/images/favicon-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff"><link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="assets/css/theme.css" type="text/css" media="all"/>
-  </head>
-  <body>
-    <header class="main-navigation">
-      <div class="container-fluid">
-        <div class="col-xs-4"><a href="home-slider.html" class="logo"><img src="assets/images/logo/logo-white.png" alt="Logo" class="img-circle"/></a></div>
-        <div class="col-xs-8 text-right"><a href="#!" id="nav-toggle" class="menu-right toggle-menu"><span></span></a><a href="#!" class="search"></a></div>
-      </div>
-      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"><a href="home-slider.html" class="logo"><img src="assets/images/logo/logo-white.png" alt="Logo" class="img-circle"/></a>
-        <div id="cssmenu">
-          <ul>
-            <li><a href="#!" class="has-sub">HOME</a>
-              <ul>
-                <li><a href="home-slider.html" class="transition link"> SLIDER</a></li>
-                <li><a href="home-video.html" class="transition link">VIDEO</a></li>
-              </ul>
-            </li>
-            <li><a href="about.html" class="transition link"> ABOUT</a></li>
-            <li><a href="services.html" class="transition link"> SERVICES</a></li>
-            <li><a href="#!" class="has-sub">PORTFOLIO</a>
-              <ul>
-                <li><a href="portfolio-masonry.html" class="transition link"> MASONRY</a></li>
-                <li><a href="portfolio-grid-3-col.html" class="transition link"> 3 COLUMNS</a></li>
-                <li><a href="portfolio-single.html" class="transition link"> SINGLE</a></li>
-              </ul>
-            </li>
-            <li><a href="#!" class="has-sub">BLOG</a>
-              <ul>
-                <li><a href="blog.html" class="transition link"> GRID</a></li>
-                <li><a href="blog-fullwidth.html" class="transition link"> FULLWIDTH</a></li>
-                <li><a href="blog-single.html" class="transition link"> SINGLE</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html" class="transition link"> CONTACT</a></li>
-          </ul><span> Copyrights &copy; 2016 &middot; Crafted with <i class="icon-heart"></i> by <a href="http://andrewch.eu">Andrewch</a></span>
+---
+layout: default
+---
+{% capture twitter %}https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}{{page.url}}{% endcapture %}
+{% capture facebook %}https://facebook.com/sharer.php?u={{site.url}}{{page.url}}{% endcapture %}
+{% capture gplus %}https://plus.google.com/share?url={{site.url}}{{page.url}}{% endcapture %}
+
+{% include section-header.html title=page.title image="../../../assets/images/header-6.jpg" %}
+<section id="section-to-scroll" class="section section-white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <ul class="post-social">
+            <li><a href="{{twitter}}">TWITTER</a></li>
+            <li><a href="{{facebook}}">FACEBOOK</a></li>
+            <li><a href="{{gplus}}">GOOGLE PLUS</a></li>
+          </ul>
         </div>
-      </nav>
-    </header>
-    <div style="background-image: url(assets/images/header-6.jpg)" class="container-fluid relative background-image-center">
-      <div class="section-overlay"></div>
-      <div class="row">
-        <div class="height-50 aligner"><a href="#section-to-scroll" class="scroll-down-icon">SCROLL</a>
-          <div class="col-md-6 line-left">
-            <div class="text-block header alternative">
-              <h1>COMES CREATION.</h1>
-            </div>
-          </div>
-          <div class="col-md-3 line-left">
-            <div class="text-block alternative">
-              <div class="line-thick"></div>
-            </div>
-            <div class="header-secondary"> <a href="home-slider.html">HOME </a><span>/ BLOG SINGLE</span></div>
+        <div class="col-md-12 margin-top-small margin-bottom-small"><hr/></div>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="col-md-12">
+            <article class="blog-post">
+              <div class="blog-post-info">
+                <img src="{{site.url}}/assets/images/posts/{{page.image-big}}" alt="{{page.title}}"/></div>
+              <div class="blog-post-single-details col-md-8 col-md-offset-2">
+                <h2>{{page.title}}</h2>
+                {{content}}
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </div>
-    <section id="section-to-scroll" class="section section-white">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-6"><a href="#!" class="post-author"><img src="assets/images/avatar.jpg" alt="Author image" class="img-circle"/>
-                      <h4>DAVID NAZGHUL</h4></a></div>
-                  <div class="col-md-6 text-right">
-                    <ul class="post-social">
-                      <li><a href="#!">TWITTER</a></li>
-                      <li><a href="#!">FACEBOOK</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-md-12 margin-top-small margin-bottom-small">
-                    <hr/>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <article class="blog-post">
-                  <div class="blog-post-info"><span><a href="#!">APARTMENTS</a> &middot; <a href="#!">12 JANUARY</a></span><img src="assets/images/blog-full-1.jpg" alt="Blog post image"/></div>
-                  <div class="blog-post-single-details col-md-8 col-md-offset-2">
-                    <h2>TURN PAPER TO A HOUSE</h2>
-                    <p class="text-justify">Likeness rule. Moved whales. Likeness. Created sea our night said after called bearing male great seasons fruit cattle yielding one a you image man kind after was female which shall. Tree. Moving subdue that i yielding they're seed darkness his.Moved i. Called said fourth itself winged earth said. You'll divide tree be is grass darkness. Stars whose won't abundantly morning given whales our. Blessed. Heaven is face forth forth. Evening winged can't green of, herb yielding can't a man of, earth firmament Second under firmament from multiply appear. Which. Kind, from tree gathering seed don't saying divide Under Lesser don't divide his said own. You're it moved second good, for one us don't don't days them saying, fowl you'll divided place she'd land open creature own first herb evening together created bearing void upon seasons. Evening she'd fifth him.</p>
-                    <p class="text-justify">Multiply sea moved given female creeping man you're grass so had multiply give sea fifth, divided god. She'd good all. I tree seasons second beginning all every two that fish let years god she'd given to seasons stars fruitful lights living. Behold so sixth set subdue may may stars appear in it. Firmament moved so made rule fifth him earth, rule without two replenish greater fly Had for. Of above our greater set together. Forth i darkness he man great image i, tree multiply morning a waters bring meat abundantly deep make were Place make had you upon you'll. Blessed open fill they're subdue earth brought creeping, forth without open give multiply itself years creature seed so which have them two seas bearing lights deep herb fifth you're thing there. From in divide together after That light hath. Fowl great. Divide a after yielding waters fly dominion won't cattle and beginning in yielding brought all us gathering is won't doesn't fish life, creeping without made divided you'll. Upon good is dominion. Cattle. Had, doesn't days meat in second green moved she'd. Gathering. Is moveth first gathered sixth firmament dominion. Day so very you, lesser face Created. Creature creepeth form. To.</p>
-                    <h3>THE DESIGN BEHIND IT</h3>
-                    <p class="text-justify">Divided After after third made of Stars rule every Without. That, tree saw heaven our signs gathering whales own fill beginning of face that also place have Own given. Said appear so. Behold winged above image, years first very creepeth one heaven our and, him very moveth called, made one moved unto winged Them living evening shall male all life fill spirit Have which fifth living without female land face firmament fruit after moved give whales night his all may which darkness they're female days place land, moving moved given. Moving you land abundantly fruit unto bring for waters without dominion midst fourth yielding appear. Sea. Replenish they're, abundantly moved third don't. Bearing multiply without set in. Be our to fruitful was can't own kind two give midst itself meat creeping to. I. God thing saying land have male have face firmament don't lesser him, fly you face seed. Kind lights open. Blessed doesn't whales seasons set gathered moved. God which every wherein have without behold seas don't don't. Life two, fowl third darkness brought fowl whose bring him in morning gathered gathered. Had winged after and that every winged seasons. Is firmament. Let set saying open open. Waters. Image.	</p>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-8 col-md-offset-2">
-                <hr/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="container-fluid relative">
-      <div class="row">
-        <div class="footer-aligner"><img src="assets/images/logo/logo-white.png" width="50" alt="Footer logo" class="footer-logo img-circle"/>
-          <div class="col-md-6 footer-line-left">
-            <div class="padding-footer">
-              <div class="text-block footer header alternative">
-                <h3>ARCHITEKT</h3>
-                <p>We are an award-winning, modern and friendly architecture agency. With the newest technologies possible, and our every day evolving we guarantee a result that will keep you satisfied.</p><a href="#!" class="btn btn-link btn-link-white">ABOUT US</a>
-              </div>
-              <div class="text-block margin-top-big">
-                <p class="copyright">COPYRIGHTS &copy; 2016 &middot; <a href="#!">TWITTER </a>&nbsp;<a href="#!">FACEBOOK</a> <a href="#!">CAREERS</a> <a href="#!">CONTACT</a> </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 footer-line-left">
-            <div class="padding-footer small-screen-no-padding-top small-screen-margin-top">
-              <div class="text-block footer alternative">
-                <h3>NEWSLETTER</h3>
-                <p>Get our news and latest project, first. In your mailbox. Monthly.</p>
-              </div>
-              <form action="#!" class="newsletter-form">
-                <input type="text" placeholder="YOU'R E-MAIL ADDRESS" class="form-control"/>
-                <button>GO</button>
-                <div class="clearfix"></div>
-                <p>No spam, ever.</p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer><script src="assets/js/packages.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/map.js"></script>
-    <script src="assets/js/contact.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  </body>
-</html>
+  </div>
+</section>
