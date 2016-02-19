@@ -9,89 +9,28 @@ layout: default
         <div class="row">
           <div class="col-md-12">
             <div class="section-head"><span>.01</span>
-              <h3>OUR PROJECTS</h3>
+              <h3>MIS PROYECTOS</h3>
             </div>
           </div>
           <div class="col-md-12 padded">
             <div class="text-block">
-              <h5>TOP RATED PROJECTS</h5>
-              <p class="no-margin"> Our work presented in a masonry style</p>
+              <h5>Últimos proyectos de arquitectura</h5>
+              <p class="no-margin">Para recoger ideas o ver cómo trabajo</p>
             </div>
           </div>
           <div class="col-md-12">
             <div class="masonry-grid row">
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-1.jpg" alt="Portfolio Image"/>
+              {% for project in site.data.projects %}
+              <div class="masonry-grid-item col-md-6"><a href="{{project.path}}"><img src="{{project.image}}" alt="{{project.name}}"/>
                   <div class="masonry-item-overlay background-color-3">
                     <div class="masonry-item-overlay-inner aligner">
                       <div class="text-center">
-                        <h2>LUXURY HOUSE</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
+                        <h2>{{project.name}}</h2>
+                        <p>{{project.type}}</p><span></span>
                       </div>
                     </div>
                   </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-2.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOUSE</h2>
-                        <p>INTERIOR DESIGN</p><span>		</span>
-                      </div>
-                    </div>
-                  </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-3.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay background-color-3">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOTEL</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
-                      </div>
-                    </div>
-                  </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-4.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOUSE</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
-                      </div>
-                    </div>
-                  </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-5.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay background-color-3">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOTEL</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
-                      </div>
-                    </div>
-                  </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-6.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOUSE</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
-                      </div>
-                    </div>
-                  </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-7.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOTEL</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
-                      </div>
-                    </div>
-                  </div></a></div>
-              <div class="masonry-grid-item col-md-6"><a href="portfolio-single.html"><img src="/assets/images/portfolio-masonry-8.jpg" alt="Portfolio Image"/>
-                  <div class="masonry-item-overlay background-color-3">
-                    <div class="masonry-item-overlay-inner aligner">
-                      <div class="text-center">
-                        <h2>LUXURY HOUSE</h2>
-                        <p>INTERIOR DESIGN</p><span></span>
-                      </div>
-                    </div>
-                  </div></a></div>
+              {% endfor %}
             </div>
           </div>
         </div>
