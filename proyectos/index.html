@@ -21,12 +21,12 @@ title: Proyectos
           </div>
           <div class="col-md-12">
             <div class="masonry-grid row">
-              {% for project in site.data.projects %}
-              <div class="masonry-grid-item col-md-6"><a href="{{project.path}}"><img src="{{project.image}}" alt="{{project.name}}"/>
+              {% for project in site.projects | sort: date%}
+              <div class="masonry-grid-item col-md-6"><a href="{{project.url}}"><img src="{{project.image}}" alt="{{project.title}}"/>
                   <div class="masonry-item-overlay background-color-3">
                     <div class="masonry-item-overlay-inner aligner">
                       <div class="text-center">
-                        <h2>{{project.name}}</h2>
+                        <h2>{{project.title}}</h2>
                         <p>{{project.type}}</p><span></span>
                       </div>
                     </div>
