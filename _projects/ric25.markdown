@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Ric 25
-type: "Diseño de Interior"
+type: "Reforma de Interior"
 image: "/assets/images/proyectos/ric-25/proyecto.jpg"
 client: Particular
 images-big:

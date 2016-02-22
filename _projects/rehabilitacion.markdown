@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Rehabilitación
-type: "Proyecto de Arquitectura"
+type: "Rehabilitación de Vivienda"
 image: "/assets/images/proyectos/rehabilitacion/proyecto.jpg"
 client: Particular
 images-big:
