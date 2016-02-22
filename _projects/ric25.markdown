@@ -2,19 +2,20 @@
 layout: project
 title: Ric 25
 type: "Diseño de Interior"
-image: "/assets/images/portfolio-masonry-1.jpg"
+image: "/assets/images/proyectos/ric-25/proyecto.jpg"
 client: Particular
 images-big:
-  - "/assets/images/portfolio-single-1.jpg"
-  - "/assets/images/portfolio-single-1.jpg"
-  - "/assets/images/portfolio-single-1.jpg"
+  - "/assets/images/proyectos/ric-25/grande.jpg"
 quote:
-  text: Nos encantó la casa
-  author: Propietaria
+  text: "Pasamos de tener una casa antigua y con muchas habitaciones pequeñas a
+  tener espacios amplios y modernos. Fue exáctamente lo que queríamos."
+  author: Raquel, propietaria
 images-zoom:
-  - "/assets/images/portfolio-grid-1.jpg"
-  - "/assets/images/portfolio-grid-1.jpg"
-  - "/assets/images/portfolio-grid-1.jpg"
+  - "/assets/images/proyectos/ric-25/zoom-1.jpg"
 date: 2016-02-17
 ---
-Ric 25
+En esta reforma se realiza principalmente una ampliación de espacios, ya que en
+la antigua distribución había un elevado número de habitaciones.
+
+Con la reforma se consigue un salón y una habitaciones de dimensiones medias acorde con las
+necesidades de los propietarios, y así mismo se reforman cocina y baño.
