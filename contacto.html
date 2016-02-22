@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Contato
+mail: "arquitectoteruel@gmail.com"
+phone: "639 56 03 76"
 ---
 {% include section-header.html title="CONTACTO" image="/assets/images/contacto.jpg" %}
 <section id="section-to-scroll" class="section section-semi-white">
@@ -24,13 +26,13 @@ title: Contato
               <div class="col-md-6">
                 <div class="icon-block"><i class="icon-telephone"></i>
                   <h4>TELEFONO</h4>
-                  <p class="text-justify">654 321 012</p>
+                  <p class="text-justify">{{page.phone}}</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="icon-block"><i class="icon-email"></i>
                   <h4>EMAIL</h4>
-                  <p class="text-justify"><a href="mailto:arquitectoteruel@gmail.com">arquitectoteruel@gmail.com</a></p>
+                  <p class="text-justify"><a href="mailto:{{page.mail}}">{{page.mail}}</a></p>
                 </div>
               </div>
             </div>
@@ -56,9 +58,10 @@ title: Contato
         <div class="row">
           <div data-os-animation="fadeIn" data-os-animation-delay="0s" class="col-md-8 col-md-offset-2 os-animation">
             <form id="contact_form" method="POST" class="contact-form" action="http://formspree.io/arquitectoteruel@gmail.com">
-              <input type="text" name="name" placeholder="TU NOMBRE" class="form-control"/>
-              <input type="email" name="email" placeholder="TU E-MAIL" class="form-control"/>
-              <textarea placeholder="TU MENSAJE" name="message" class="form-control"></textarea>
+              <input required type="text" name="name" placeholder="TU NOMBRE" class="form-control"/>
+              <input required type="email" name="email" placeholder="TU E-MAIL" class="form-control"/>
+              <textarea required placeholder="TU MENSAJE" name="message" class="form-control"></textarea>
+              <input type="hidden" name="_next" value="{{site.url}}" />
               <button type="submit" class="contact-form-submit">ENVIAR MENSAJE</button>
               <div id="messages" class="col-md-12"></div>
             </form>
