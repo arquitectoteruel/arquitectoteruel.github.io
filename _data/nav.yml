@@ -1,12 +1,12 @@
-- name: Inicio
+- name: INICIO
   path: /
-- name: Sobre Mí
+- name: SOBRE MI
   path: /sobre-mi.html
-- name: Servicios
+- name: SERVICIOS
   path: /servicios.html
-- name: Proyectos
+- name: PROYECTOS
   path: /proyectos/
-- name: Contacto
+- name: CONTACTO
   path: /contacto.html
-- name: Blog
+- name: BLOG
   path: /blog/
