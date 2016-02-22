@@ -3,9 +3,9 @@
 ARCHITEKT: theme.js
 Main Theme JS file
 
-@Author: Andrew ch 
+@Author: Andrew ch
 @URL: http://andrewch.eu
- 
+
 =========================================================================
  */
 
@@ -45,7 +45,7 @@ jQuery(document).ready(function( $ ) {
 		}
 
 	});
-	
+
 	// Sidebar Menu
 	//===================
 
@@ -91,8 +91,8 @@ jQuery(document).ready(function( $ ) {
 
 		// Second state
 		// ----
-		
-		var tl = new TimelineLite();  
+
+		var tl = new TimelineLite();
 		tl.set($("#cssmenu ul li"), {y:0,x:0,opacity: 0});
 		tl.set($(".cbp-spmenu .logo"), {y:0,x:0,opacity: 0});
 		tl.staggerTo($("#cssmenu ul li"),.5, {y:0,opacity:0, repeat:0,delay: .1, ease: Power3.easeOut });
@@ -101,15 +101,15 @@ jQuery(document).ready(function( $ ) {
 	  } else {
 		// First state
 		// ----
-		var tl = new TimelineLite();  
+		var tl = new TimelineLite();
 		tl.set($("#cssmenu ul li"), {y:30,x:0,opacity: 0});
 		tl.set($(".cbp-spmenu .logo"), {y:0,x:0,opacity: 0});
-		tl.delay(.6);
+		tl.delay(.2);
 		tl.staggerTo($(".cbp-spmenu .logo"),.2, {y:0,opacity:1, repeat:0,delay: 0, ease: Power3.easeOut }, .00);
 		tl.staggerTo($("#cssmenu ul li"),.8, {y:0,opacity:1, repeat:0,delay: 0, ease: Power3.easeOut }, .05);
 		  // Something you want delayed.
 	  }
-	  
+
 	  $(this).data("clicks", !clicks);
 	});
 
@@ -129,15 +129,15 @@ jQuery(document).ready(function( $ ) {
 			var osElement = $(this),
 				osAnimationClass = osElement.attr('data-os-animation'),
 				osAnimationDelay = osElement.attr('data-os-animation-delay');
-		 
+
 			osElement.css({
 				'-webkit-animation-delay':  osAnimationDelay,
 				'-moz-animation-delay':     osAnimationDelay,
 				'animation-delay':          osAnimationDelay
 			});
-		 
+
 			var osTrigger = ( trigger ) ? trigger : osElement;
-		 
+
 			osTrigger.waypoint(function() {
 				osElement.addClass('animated').addClass(osAnimationClass);
 			},{
@@ -151,8 +151,8 @@ jQuery(document).ready(function( $ ) {
 		onScrollInit( $('.os-animation') );
 		onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
 	}, 600);
-	
-	
+
+
 	$('.zoom-gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -175,7 +175,7 @@ jQuery(document).ready(function( $ ) {
 				return element.find('img');
 			}
 		}
-		
+
 	});
 
 	// Back to top button
