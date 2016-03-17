@@ -1,6 +1,22 @@
 ---
 layout: default
 title: Sobre Mí
+history:
+  - year: 2009
+    title:
+    text: "Me licencié como arquitecta en la Escuela Técnica Superior de
+    Arquitectura de la Universidad de Navarra."
+  - year: 2010
+    title:
+    text: "Comencé mi carrera profesional trabajando en un estudio de
+    arquitectura, complementándolo con varios cursos de formación."
+  - year: 2011
+    title:
+    text: "Decido comenzar mi carrera profesional independiente.<br />
+    Mi trabajo principal se centró en la gestión de obra, donde aprendí sobre
+    construcción, trato con el cliente, proveedores y administración.<br />
+    Posteriormente amplié mi campo de trabajo, dedicándome también a la
+    elaboración de proyectos y dirección de obra."
 processes:
   - title: COMUNICACION
     description: "La satisfacción del cliente es siempre mi prioridad y para
@@ -33,22 +49,18 @@ processes:
               <p class="no-margin"> Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have:</p>
             </div>
           </div>
+          {% for line in page.history %}
           <div class="col-md-2">
             <div class="story-date">
-              <h2>2015</h2>
+              <h2>{{line.year}}</h2>
             </div>
           </div>
           <div class="col-md-10 small-screen-margin-top">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="text-block">
-                  <h4>WE ARE 10 PEOPLE BIGGER NOW</h4>
-                  <p class="text-justify">We started as a small, subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have face which male fifth said seas rule above.</p>
-                </div>
-              </div>
-              <div class="col-md-6 text-right small-screen-text-left">
-                <div class="text-block"><a href="#!" class="btn btn-link">YEAR IN REVIEW</a>
-                  <p class="text-justify">But we kept going above subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have face rule above for.</p>
+                  <h4>{{line.title}}</h4>
+                  <p class="text-justify">{{line.text}}</p>
                 </div>
               </div>
             </div>
@@ -56,52 +68,7 @@ processes:
           <div class="col-md-12 margin-bottom">
             <hr/>
           </div>
-          <div class="col-md-2">
-            <div class="story-date">
-              <h2>2013</h2>
-            </div>
-          </div>
-          <div class="col-md-10 small-screen-margin-top">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="text-block">
-                  <h4>WE GOT THE FIRST BIG AWARD</h4>
-                  <p class="text-justify">We started as a small, subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have face which male fifth said seas rule above.</p>
-                </div>
-              </div>
-              <div class="col-md-6 text-right small-screen-text-left">
-                <div class="text-block"><a href="#!" class="btn btn-link">YEAR IN REVIEW</a>
-                  <p class="text-justify">But we kept going above subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have face rule above for.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 margin-bottom">
-            <hr/>
-          </div>
-          <div class="col-md-2">
-            <div class="story-date">
-              <h2>2010</h2>
-            </div>
-          </div>
-          <div class="col-md-10 small-screen-margin-top">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="text-block">
-                  <h4>AN ARCHITECTURE AGENCY BORNED</h4>
-                  <p class="text-justify">We started as a small, subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have face which male fifth said seas rule above.</p>
-                </div>
-              </div>
-              <div class="col-md-6 text-right small-screen-text-left">
-                <div class="text-block"><a href="#!" class="btn btn-link">YEAR IN REVIEW</a>
-                  <p class="text-justify">But we kept going above subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea have face rule above for.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <hr/>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -114,13 +81,13 @@ processes:
         <div class="row">
           <div class="col-md-12">
             <div class="section-head"><span>.02</span>
-              <h3>PROCESO</h3>
+              <h3>MÉTODO DE TRABAJO</h3>
             </div>
           </div>
           <div class="col-md-12 padded">
             <div class="text-block">
-              <h5>EL METODO DE TRABAJO</h5>
-              <p class="no-margin">Cualquiera hace una casa, pero no dejes que tu casa la haga cualquiera.
+              <h5>UNA CASA LA HACE CUALQUIERA, PERO NO DEJES QUE TU CASA LA HAGA
+              CUALQUIERA</h5>
             </div>
           </div>
           {% for process in page.processes %}
