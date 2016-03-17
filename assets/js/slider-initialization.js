@@ -9,9 +9,9 @@ files on all pages, for the sake of speed.
 
 ---
 
-@Author: Andrew ch 
+@Author: Andrew ch
 @URL: http://andrewch.eu
- 
+
 =========================================================================
  */
 
@@ -27,14 +27,15 @@ jQuery(document).ready(function( $ ) {
 		gridwidth:1300,
 		gridheight:600,
 		//fullScreenOffsetContainer: ".main-navigation",
-		minHeight:600,	
+		minHeight:600,
 		responsiveLevels:[1240,1024,778,480],
 		gridwidth:[1350,820,1300,2500],
 		gridheight:[600,600,1150,4350],
+    spinner: "off",
 		navigation : {
-			keyboardNavigation:"on", 
+			keyboardNavigation:"on",
 			keyboard_direction:"horizontal",
-			mouseScrollNavigation:"off",   
+			mouseScrollNavigation:"off",
 			onHoverStop:"on",
 			touch:{
 				 touchenabled:"on",
@@ -88,7 +89,7 @@ jQuery(document).ready(function( $ ) {
 
 	// Video Hero
 	//===================
-	
+
 	$("#rev_slider_2").revolution({
 		sliderType:"hero",
 		sliderLayout:"standard",
@@ -96,16 +97,16 @@ jQuery(document).ready(function( $ ) {
 		gridwidth:1300,
 		gridheight:600,
 		//fullScreenOffsetContainer: ".main-navigation",
-		minHeight:600,	
+		minHeight:600,
 		responsiveLevels:[1240,1024,778,480],
 		gridwidth:[1350,820,1300,2500],
-		gridheight:[600,600,1150,4350],	
+		gridheight:[600,600,1150,4350],
 		//fullScreenOffsetContainer: ".main-navigation"
 	});
 
 	// Parallax Hero
 	//===================
-	
+
 	$("#rev_slider_3").revolution({
 		sliderType:"hero",
 		sliderLayout:"fullscreen",
