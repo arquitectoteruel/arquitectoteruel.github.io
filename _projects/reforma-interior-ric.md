@@ -1,8 +1,7 @@
 ---
-layout: project
-title: Ric 25
-type: "Reforma de Interior"
+title: Reforma Interior Ric
 image: "/assets/images/proyectos/ric-25/proyecto.jpg"
+location: Zaragoza
 client: Particular
 images-big:
   - "/assets/images/proyectos/ric-25/grande.jpg"

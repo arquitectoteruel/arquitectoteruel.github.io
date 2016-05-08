@@ -1,8 +1,7 @@
 ---
-layout: project
-title: Hotel Balneario
-type: "Maquetado"
+title: Proyecto Hotel Balneario
 image: "/assets/images/proyectos/hotel-balneario/proyecto.jpg"
+location: "Escó"
 client: Particular
 images-big:
   - "/assets/images/proyectos/hotel-balneario/grande.jpg"

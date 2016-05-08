@@ -2,7 +2,8 @@
 title: Beatriz Tabuenca - Arquitecta
 email: arquitectoteruel@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Arquitecta en Albarracín, Teruel y Zaragoza
+  Arquitecto en Teruel.
+  Realizo reformas, rehabilitaciones, obra nueva, gestión y dirección de obra, certificados y colaboraciones.
 url: "www.arquitectoteruel.com" # the base hostname & protocol for your site
 
 # Build settings
@@ -11,7 +12,15 @@ markdown: kramdown
 collections:
   projects:
     output: true
-    permalink: /proyectos/:path/
+    permalink: /proyectos/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      location: "Sin Ubicación"
 
 gems:
     - jekyll-paginate
