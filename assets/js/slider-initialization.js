@@ -24,8 +24,6 @@ jQuery(document).ready(function( $ ) {
 		sliderType:"standard",
 		//sliderLayout:"fullscreen",
 		delay:6000,
-		gridwidth:1300,
-		gridheight:600,
 		//fullScreenOffsetContainer: ".main-navigation",
 		minHeight:600,
 		responsiveLevels:[1240,1024,778,480],
