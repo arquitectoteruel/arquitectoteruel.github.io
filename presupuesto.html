@@ -47,10 +47,6 @@ layout: default
           <div data-os-animation="fadeIn" data-os-animation-delay="0s" class="col-md-8 col-md-offset-2 os-animation">
             <form class="form-horizontal" name="presupuesto" onchange="calculate()">
               <div class="form-group">
-                <label class="control-label" for="metros">Metros cuadrados</label>
-                <input type="number" name="metros" id="metros" class="form-control">
-              </div>
-              <div class="form-group">
                 <label class="control-label" or="provincia">Provincia</label>
                 <select id="provincia" name="provincia" class="form-control">
                   <option>Zaragoza</option>
@@ -87,87 +83,123 @@ layout: default
 
 <script type="text/javascript">
 
-var tipoConstruccion = `
-              <div class="form-group">
-                <label class="control-label" for="tipo-construccion">Tipo de construcción</label>
-                <select id="tipo-construccion" name="tipo-construccion" class="form-control">
-                  <option>Aislada</option>
-                  <option>Pareada</option>
-                  <option>Entre medianeras</option>
-                </select>
-              </div>`;
+  function tipoConstruccion(args) {
+    if (args.length > 1) {
+      return `
+        <div class="form-group">
+          <label class="control-label" for="tipo-construccion">Tipo de construcción</label>
+          <select id="tipo-construccion" name="tipo-construccion" class="form-control">
+            <option value="${args[0]}">Aislada</option>
+            <option value="${args[1]}">Pareada</option>
+            <option value="${args[2]}">Entre medianeras</option>
+          </select>
+        </div>
+    `;}
+    else {
+      return `
+        <div class="form-group">
+          <label class="control-label">¿Es una construccion aislada?</label>
+          <div class="radio">
+            <label><input class="radio-inline" type="radio" name="construccion_aislada" value="{args[0]}" />Sí</label>
+          </div>
+          <div class="radio">
+            <label><input class="radio-inline" type="radio" name="construccion_aislada" value="0"/>No</label>
+          </div>
+        </div>
+      `;}
+  };
 
-var obraNueva = `
-              <div class="form-group">
-                <label class="control-label">¿Es una obra nueva?</label>
-                <div class="radio">
-                  <label><input class="radio-inline" type="radio" name="obra_nueva" />Sí</label>
-                </div>
-                <div class="radio">
-                  <label><input class="radio-inline" type="radio" name="obra_nueva" />No</label>
-                </div>
-              </div>`;
-
-var altura = `
-              <div class="form-group">
-                <label class="control-label" for="altura">Altura</label>
-                <select id="altura" name="altura" class="form-control">
-                  <option>Una planta</option>
-                  <option>Dos plantas</option>
-                  <option>Tres o más plantas</option>
-                </select>
-              </div>`;
-
-var caracteristicasYAcabados = `
-              <div class="form-group">
-                <label class="control-label">Características y acabados</label>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Estructura metálica</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Revestimiento exterior especial</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Carpintería de alta calidad</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Ascensor</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Acabados interiores de alta calidad</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Aire acondicionado</label>
-                </div>
-              </div>`;
-
-var superficiesConstruidas = `
-              <div class="form-group">
-                <label class="control-label">Superficies construidas</label>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Sótanos y trasteros</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Garaje</label>
-                </div>
-                <div class="checkbox">
-                  <label><input class="checkbox-inline" type="checkbox" />Vivienda u oficina</label>
-                </div>
-              </div>`;
-
-function result(value) {
-  return `
+  function obraNueva(value) { return `
     <div class="form-group">
-      <label class="control-label" for="result">Resultado</label>
-      <input type="text" name="result" id="result" class="form-control" value="${value} €">
+      <label class="control-label">¿Es una obra nueva?</label>
+      <div class="radio">
+        <label><input class="radio-inline" type="radio" name="obra_nueva" value="${value}" />Sí</label>
+      </div>
+      <div class="radio">
+        <label><input class="radio-inline" type="radio" name="obra_nueva" value="0" />No</label>
+      </div>
     </div>
-  `;
-};
+  `;}
 
-var innerForm = document.getElementById('innerForm');
-document.getElementById('tipo-edificacion').selectedIndex = -1;
+  var altura = `
+    <div class="form-group">
+      <label class="control-label" for="altura">Altura</label>
+      <select id="altura" name="altura" class="form-control">
+        <option value="0.10">Una planta</option>
+        <option value="0.05">Dos plantas</option>
+        <option value="0">Tres o más plantas</option>
+      </select>
+    </div>`;
 
-function calculate() {
+  function caracteristicasYAcabados(args) {
+    return `
+      <div class="form-group">
+        <label class="control-label">Características y acabados</label>
+        <div class="checkbox">
+          <label><input class="checkbox-inline" type="checkbox" value="${args[0]}" />Estructura metálica</label>
+        </div>
+        <div class="checkbox">
+          <label><input class="checkbox-inline" type="checkbox" value="${args[1]}" />Carpintería de alta calidad</label>
+        </div>
+        <div class="checkbox">
+          <label><input class="checkbox-inline" type="checkbox" value="${args[2]}" />Revestimiento exterior especial</label>
+        </div>
+        <div class="checkbox">
+          <label><input class="checkbox-inline" type="checkbox" value="${args[3]}" />Acabados interiores de alta calidad</label>
+        </div>
+        <div class="checkbox">
+          <label><input class="checkbox-inline" type="checkbox" value="${args[4]}" />Ascensor</label>
+        </div>
+        <div class="checkbox">
+          <label><input class="checkbox-inline" type="checkbox" value="${args[5]}" />Aire acondicionado</label>
+        </div>
+      </div>
+    `;}
+
+  var superficiesConstruidas = `
+    <div class="form-group">
+      <label class="control-label">Metros cuadrados de superficies construidas</label>
+      <div class="form-group">
+        <label class="control-label" for="vivienda">Vivienda</label>
+        <input type="text" name="result" id="vivienda" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="garaje">Garaje</label>
+        <input type="text" name="result" id="garaje" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="porche">Porche</label>
+        <input type="text" name="result" id="porche" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="sotano">Sótano</label>
+        <input type="text" name="result" id="sotano" class="form-control" />
+      </div>
+    </div>`;
+
+  var superficiesConstruidasGaraje = `
+    <div class="form-group">
+      <label class="control-label">Superficies construidas</label>
+      <div class="form-group">
+        <label class="control-label" for="garaje">Garaje</label>
+        <input type="text" name="result" id="garaje" class="form-control" />
+      </div>
+    </div>`;
+
+  function result(value) {
+    return `
+      <div class="form-group">
+        <label class="control-label" for="result">Resultado</label>
+        <input type="text" name="result" id="result" class="form-control" value="${value} €">
+      </div>
+    `;
+  };
+
+  var innerForm = document.getElementById('innerForm');
+  document.getElementById('tipo-edificacion').selectedIndex = -1;
+  document.getElementById('provincia').selectedIndex = -1;
+
+  function calculate() {
     var tipoEdificacion = document.getElementById('tipo-edificacion');
     tipoEdificacion = tipoEdificacion.options[tipoEdificacion.selectedIndex].text;
     var formResult = document.getElementById('result');
@@ -179,35 +211,35 @@ function calculate() {
         formResult.innerHTML = result(v);
         break;
       case "Bloques de viviendas":
-        formResult.innerHTML = result;
+        formResult.innerHTML = result(0);
         break;
       case "Comercios y oficinas":
-        formResult.innerHTML = result;
+        formResult.innerHTML = result(0);
         break;
       case "Naves y garajes":
-        formResult.innerHTML = result;
+        formResult.innerHTML = result(0);
         break;
       default:
-        formReslt.innerHTML = '';
+        formResult.innerHTML = '';
         break;
     }
-  }
+  };
 
   function changeForm() {
     var tipoEdificacion = document.getElementById('tipo-edificacion');
     tipoEdificacion = tipoEdificacion.options[tipoEdificacion.selectedIndex].text;
     switch(tipoEdificacion) {
       case "Vivienda unifamiliar":
-        innerForm.innerHTML = tipoConstruccion + obraNueva + altura  + caracteristicasYAcabados + superficiesConstruidas;
+        innerForm.innerHTML = tipoConstruccion([0.25, 0.15, 0.05]) + obraNueva(0.6) + altura + caracteristicasYAcabados([0.03, 0.01, 0.05, 0.07, 0.15, 0.03]) + superficiesConstruidas;
         break;
       case "Bloques de viviendas":
-        innerForm.innerHTML = obraNueva + altura + caracteristicasYAcabados ;
+        innerForm.innerHTML = tipoConstruccion([0.05]) + obraNueva(0.7) + altura + caracteristicasYAcabados([0.03, 0.01, 0.05, 0.07, 0.02, 0.03]) + superficiesConstruidas;
         break;
       case "Comercios y oficinas":
-        innerForm.innerHTML = obraNueva + altura;
+        innerForm.innerHTML = tipoConstruccion([0.05]) + obraNueva(0.8) + altura + caracteristicasYAcabados([0.03, 0.01, 0.05, 0.07, 0.02, 0.03]) + superficiesConstruidas;
         break;
       case "Naves y garajes":
-        innerForm.innerHTML = obraNueva + altura;
+        innerForm.innerHTML = tipoConstruccion([0.05]) + superficiesConstruidasGaraje;
         break;
       default:
         innerForm.innerHTML = '';
