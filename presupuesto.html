@@ -1,0 +1,218 @@
+---
+layout: default
+---
+{% include section-header.html title="PRESUPUESTO" image="/assets/images/header-3.jpg" %}
+<section id="section-to-scroll" class="section section-semi-white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-head"><span>.01</span>
+              <h3>CALCULA TU PRESUPUESTO GRATIS</h3>
+            </div>
+          </div>
+          <div class="col-md-6 padded">
+            <div class="text-block">
+              <h5>SIMPLEMENTE INTRODUCE LOS DATOS</h5>
+              <p class="no-margin"> Our studio is opened everyday on morning and evening hours and saturdays on morning times only. </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="icon-block"><i class="icon-telephone"></i>
+                  <h4>SIN COMPROMISO</h4>
+                  <p class="text-justify">We us fifth sea have face which male.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="icon-block"><i class="icon-map1"></i>
+                  <h4>LOCATION</h4>
+                  <p class="text-justify">And us fifth sea have face among them all.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-os-animation="fadeIn" data-os-animation-delay="0s" class="section section-white os-animation">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div data-os-animation="fadeIn" data-os-animation-delay="0s" class="col-md-8 col-md-offset-2 os-animation">
+            <form class="form-horizontal" name="presupuesto" onchange="calculate()">
+              <div class="form-group">
+                <label class="control-label" for="metros">Metros cuadrados</label>
+                <input type="number" name="metros" id="metros" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label" or="provincia">Provincia</label>
+                <select id="provincia" name="provincia" class="form-control">
+                  <option>Zaragoza</option>
+                  <option>Huesca</option>
+                  <option>Teruel</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="tipo-edificacion">Tipo de edificación</label>
+                <select id="tipo-edificacion" name="tipo-edificacion" class="form-control" onchange="changeForm()">
+                  <option>Vivienda unifamiliar</option>
+                  <option>Bloques de viviendas</option>
+                  <option>Comercios y oficinas</option>
+                  <option>Naves y garajes</option>
+                </select>
+              </div>
+              <hr />
+
+              <div id="innerForm">
+              </div>
+
+              <hr />
+
+              <div id="result">
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+
+var tipoConstruccion = `
+              <div class="form-group">
+                <label class="control-label" for="tipo-construccion">Tipo de construcción</label>
+                <select id="tipo-construccion" name="tipo-construccion" class="form-control">
+                  <option>Aislada</option>
+                  <option>Pareada</option>
+                  <option>Entre medianeras</option>
+                </select>
+              </div>`;
+
+var obraNueva = `
+              <div class="form-group">
+                <label class="control-label">¿Es una obra nueva?</label>
+                <div class="radio">
+                  <label><input class="radio-inline" type="radio" name="obra_nueva" />Sí</label>
+                </div>
+                <div class="radio">
+                  <label><input class="radio-inline" type="radio" name="obra_nueva" />No</label>
+                </div>
+              </div>`;
+
+var altura = `
+              <div class="form-group">
+                <label class="control-label" for="altura">Altura</label>
+                <select id="altura" name="altura" class="form-control">
+                  <option>Una planta</option>
+                  <option>Dos plantas</option>
+                  <option>Tres o más plantas</option>
+                </select>
+              </div>`;
+
+var caracteristicasYAcabados = `
+              <div class="form-group">
+                <label class="control-label">Características y acabados</label>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Estructura metálica</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Revestimiento exterior especial</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Carpintería de alta calidad</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Ascensor</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Acabados interiores de alta calidad</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Aire acondicionado</label>
+                </div>
+              </div>`;
+
+var superficiesConstruidas = `
+              <div class="form-group">
+                <label class="control-label">Superficies construidas</label>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Sótanos y trasteros</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Garaje</label>
+                </div>
+                <div class="checkbox">
+                  <label><input class="checkbox-inline" type="checkbox" />Vivienda u oficina</label>
+                </div>
+              </div>`;
+
+function result(value) {
+  return `
+    <div class="form-group">
+      <label class="control-label" for="result">Resultado</label>
+      <input type="text" name="result" id="result" class="form-control" value="${value} €">
+    </div>
+  `;
+};
+
+var innerForm = document.getElementById('innerForm');
+document.getElementById('tipo-edificacion').selectedIndex = -1;
+
+function calculate() {
+    var tipoEdificacion = document.getElementById('tipo-edificacion');
+    tipoEdificacion = tipoEdificacion.options[tipoEdificacion.selectedIndex].text;
+    var formResult = document.getElementById('result');
+
+    switch(tipoEdificacion) {
+      case "Vivienda unifamiliar":
+        var v = document.presupuesto.metros.value;
+        v = meters*530;
+        formResult.innerHTML = result(v);
+        break;
+      case "Bloques de viviendas":
+        formResult.innerHTML = result;
+        break;
+      case "Comercios y oficinas":
+        formResult.innerHTML = result;
+        break;
+      case "Naves y garajes":
+        formResult.innerHTML = result;
+        break;
+      default:
+        formReslt.innerHTML = '';
+        break;
+    }
+  }
+
+  function changeForm() {
+    var tipoEdificacion = document.getElementById('tipo-edificacion');
+    tipoEdificacion = tipoEdificacion.options[tipoEdificacion.selectedIndex].text;
+    switch(tipoEdificacion) {
+      case "Vivienda unifamiliar":
+        innerForm.innerHTML = tipoConstruccion + obraNueva + altura  + caracteristicasYAcabados + superficiesConstruidas;
+        break;
+      case "Bloques de viviendas":
+        innerForm.innerHTML = obraNueva + altura + caracteristicasYAcabados ;
+        break;
+      case "Comercios y oficinas":
+        innerForm.innerHTML = obraNueva + altura;
+        break;
+      case "Naves y garajes":
+        innerForm.innerHTML = obraNueva + altura;
+        break;
+      default:
+        innerForm.innerHTML = '';
+        break;
+    }
+    document.presupuesto.result.value = '';
+  }
+</script>
